@@ -37,6 +37,7 @@ autodoc_mock_imports = [
     "scipy",
     "matplotlib",
     "seaborn",
+    "torch",
 ]
 
 templates_path = ['_templates']
