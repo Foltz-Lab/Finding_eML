@@ -12,6 +12,7 @@ Getting Started
    running_tool
    direct
    interactive
+   citations
 
 Developer Reference
 --------------------
