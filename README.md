@@ -37,7 +37,7 @@ The Outline section covers v1.0 and v1.1 categories and how they are obtained, a
 - CD56bright (NK2)
 - eML1 / iML1
 - eML2 / iML2
-- eML_transition / iML_transition
+- eML_transition(eML_mixed) / iML_transition(iML_mixed)
 - Unclassified
 
 ---
@@ -90,6 +90,7 @@ python3 -m eML.classify <arguments>
 - If protein data is present and needs to be added to the classifier run, `--protein` should be flagged and `--protein_suffix` is required to replace `-TotalSeqC` to get format of `CD16ADT`.
 - Each step of execution can also be run separately using the **[interactive execution](https://finding-eml.readthedocs.io/en/latest/interactive.html)** method.
 - Reference data and protein file are already included in the package. `--protein_file`, `--ref_model`, `--ref_adata` need to be called as shown in the example run (`/app/…`).
+- The classifier typically subsets the data to ~4,000 genes for classification. To retain all genes, transfer the NK_type column from the classified output back onto your original, full-gene AnnData object (matching on cell barcode).
 
 ---
 
