@@ -68,7 +68,7 @@ Visualize output data
 .. code-block:: bash
 
    # Define the desired order for NK_type categories
-   desired_order = ['CD56bright', 'CD56dim', 'eML1', 'eML2', 'eML_transition', 'unclassified']
+   desired_order = ['CD56bright', 'CD56dim', 'eML1', 'eML2', 'eML_mixed', 'unclassified']
 
    # Define colors for each category using the provided hex codes
    colors = ['#D8AEC8' ,  '#317EC2' , '#74CC1D', '#027D02', 'purple', '#BBBBBC']

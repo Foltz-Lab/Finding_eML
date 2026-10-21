@@ -3,7 +3,7 @@ Outline
 
 Natural Killer (NK) cells, when activated by the cytokines IL-12, IL-15, and IL-18, do not uniformly transition into cytokine induced memory-like (ML) states, as previously assumed. A recent study (`Foltz`:sup:`*`, `Tran`:sup:`*` et al., 2024 (https://doi.org/10.1126/sciimmunol.adk4893)) demonstrated that such stimulation leads to heterogeneous NK cell fates, which include effector cytokine-primed NK (effcNK) cells and a distinct enriched memory-like (eML) NK population marked by enhanced IFN-γ production. 
 
-Building on these findings, we developed a machine learning classifier (Classifier Version 1.0) using CITE-seq data to enable unbiased and accurate identification of conventional NK cells and enriched ML NK cells. Classifier Version 1.1, presented here, extends this original model (classifier Version 1.0) by introducing two additional categories: eML_transition and unclassified. These additions allow for refined classification of NK cells that do not meet the strict assignment thresholds used in the original classifier.
+Building on these findings, we developed a machine learning classifier (Classifier Version 1.0) using CITE-seq data to enable unbiased and accurate identification of conventional NK cells and enriched ML NK cells. Classifier Version 1.1, presented here, extends this original model (classifier Version 1.0) by introducing two additional categories: eML_mixed and unclassified. These additions allow for refined classification of NK cells that do not meet the strict assignment thresholds used in the original classifier.
 
 .. image:: images/classifier_versions.png
    :alt: Description of the image
@@ -14,7 +14,7 @@ This is performed by classify cells( ) function,  which classifies each cell as:
 
 1.  Assigns the label with the highest probability for the cell if any probability exceeds 0.5.
 
-2. ``eML_transition``: If both eML1 and eML2 combined have a probability > 0.5 but none of the individual types exceed 0.5,
+2. ``eML_mixed``: If both eML1 and eML2 combined have a probability > 0.5 but none of the individual types exceed 0.5,
 
 3. ``unclassified``: If all probabilities are below 0.5
 
