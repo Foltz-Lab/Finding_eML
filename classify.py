@@ -339,7 +339,7 @@ def save_results(adata, predictions, probs, output_dir, patient, vae_q, classifi
 def classify_cells(adata, classifier_type, output_dir, patient):
     """
     Classifies cells based on {classifier_type} probabilities stored in adata.obs.
-    Assigns 'ML_transition', 'unclassified', or the label with the highest probability.
+    Assigns 'ML_mixed', 'unclassified', or the label with the highest probability.
     
     """
     probability_columns = [f'CD56bright{classifier_type}prob', f'CD56dim{classifier_type}prob', f'eML1{classifier_type}prob', f'eML2{classifier_type}prob']
@@ -353,7 +353,7 @@ def classify_cells(adata, classifier_type, output_dir, patient):
     def classify_row(row):
         if all(row[col] < 0.5 for col in probability_columns):
             if row[f'eML1{classifier_type}prob'] + row[f'eML2{classifier_type}prob'] > 0.5:
-                return 'eML_transition'
+                return 'eML_mixed'
             else:
                 return 'unclassified'
         else:
